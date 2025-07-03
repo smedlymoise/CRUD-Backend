@@ -3,7 +3,7 @@ const { Duck } = require("./index");
 
 const seed = async () => {
   db.logging = false;
-  await db.sync({ force: true }); // Drop and recreate tables
+  await db.sync({ force: true }); 
   const ducks = await Duck.bulkCreate([
     { name: "James Pond" },
     { name: "Quakie Chan" },
