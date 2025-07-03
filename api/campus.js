@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { Campus, Student } = require("../database");
 
+<<<<<<< HEAD
 router.get("/", async (req, res) => {
   try {
     const campuses = await Campus.findAll({ include: Student });
@@ -42,6 +43,16 @@ router.delete("/:id", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
+=======
+router.get("/", async (req, res, next) => {
+    try {
+        const campuses = await Campus.findAll({ include: Student });
+        res.json(campuses);
+    }
+    catch(err) {
+        next(err);
+    }
+>>>>>>> 6ace57c571526b20f82019940b32791705b1a5a4
 });
 
 module.exports = router;
