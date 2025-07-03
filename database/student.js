@@ -9,11 +9,11 @@ const Student = db.define("student", {
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: { isEmail: true, }
+    validate: { isEmail: true },
   },
   gpa: {
     type: DataTypes.DECIMAL(3, 2),
-    validate: { min: 0.00, max: 4.00, }
+    validate: { min: 0.0, max: 4.0 },
   },
   imageUrl: {
     type: DataTypes.STRING,
@@ -22,3 +22,5 @@ const Student = db.define("student", {
 });
 
 module.exports = Student;
+
+//add first name last name
